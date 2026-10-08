@@ -30,7 +30,7 @@ Fotos com marca d'água de terceiros (`nails.jpg`, `nails5.jpg`) não serão usa
 
 ## 3. Narrativa e telas
 
-**Headline:** “Do primeiro fio ao último detalhe.” **Complemento:** “Cabelo, unhas, rosto e estética em um só espaço no Jardim Morumbi.” **CTA principal:** “Agendar pelo WhatsApp”, com mensagem inicial “Olá! Vi o site da Daniela Moraes e gostaria de agendar um horário.” CTAs de serviço incluem o nome do cuidado.
+**Headline:** “Cabelo, unhas e olhar. Na Av. Eliana, 474.” **Complemento:** serviços concretos do espaço e convite para pedir um horário. **CTA principal:** “Pedir horário no WhatsApp”, com mensagem inicial que solicita horários disponíveis. Cada área tem um link de WhatsApp com o serviço correspondente já indicado na mensagem. Um botão fixo reaparece após a abertura para manter o contato acessível durante a rolagem.
 
 Seções: (1) capa editorial e CTA; (2) índice de cuidados interativo, com quatro áreas e lista completa de serviços; (3) seleção de trabalhos publicados no site oficial; (4) endereço, funcionamento, avaliação informada e contato; (5) rodapé com Instagram e links úteis.
 

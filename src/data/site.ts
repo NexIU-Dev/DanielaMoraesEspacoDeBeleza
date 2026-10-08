@@ -19,60 +19,64 @@ export const services = [
     id: 'cabelo',
     number: '01',
     title: 'Cabelo',
-    subtitle: 'Do corte à transformação dos fios.',
+    subtitle: 'Para cortar, escovar, iluminar ou tratar os fios.',
     items: ['Corte', 'Escova', 'Hidratação', 'Cronograma capilar', 'Luzes', 'Progressiva', 'Selagem', 'Botox capilar'],
     image: '/images/cabelos-luzes.webp',
     imageWidth: 720,
     imageHeight: 875,
     imageAlt: 'Cabelo longo com luzes e ondas, trabalho publicado pelo espaço Daniela Moraes',
-    imageCaption: 'Cabelos · trabalho do espaço',
-    whatsappTopic: 'um serviço de cabelo',
+    imageCaption: 'Luzes e ondas',
+    whatsappTopic: 'corte, escova, luzes ou tratamento capilar',
+    whatsappLabel: 'Pedir horário para cabelo no WhatsApp',
   },
   {
     id: 'unhas',
     number: '02',
     title: 'Unhas',
-    subtitle: 'Pequenos detalhes, várias possibilidades.',
+    subtitle: 'Manicure, pedicure e alongamento no mesmo endereço.',
     items: ['Manicure', 'Pedicure', 'Alongamento de unhas'],
     image: '/images/unhas-delicadas.webp',
     imageWidth: 720,
     imageHeight: 719,
     imageAlt: 'Unhas em tom rosa claro com pequenos detalhes escuros, foto publicada pelo espaço',
-    imageCaption: 'Unhas · trabalho do espaço',
-    whatsappTopic: 'um serviço de unhas',
+    imageCaption: 'Manicure em rosa claro',
+    whatsappTopic: 'manicure, pedicure ou alongamento de unhas',
+    whatsappLabel: 'Pedir horário para unhas no WhatsApp',
   },
   {
     id: 'olhar',
     number: '03',
     title: 'Rosto & olhar',
-    subtitle: 'Cuidados que dão atenção à expressão.',
+    subtitle: 'Design de sobrancelhas, buço e cílios.',
     items: ['Design de sobrancelhas', 'Buço', 'Cílios'],
     image: '/images/olhar-cilios.webp',
     imageWidth: 720,
     imageHeight: 714,
     imageAlt: 'Detalhe de cílios e sobrancelha em foto publicada pelo espaço',
-    imageCaption: 'Olhar · trabalho do espaço',
-    whatsappTopic: 'um serviço para rosto e olhar',
+    imageCaption: 'Cílios e sobrancelha',
+    whatsappTopic: 'design de sobrancelhas, buço ou cílios',
+    whatsappLabel: 'Pedir horário para rosto e olhar no WhatsApp',
   },
   {
     id: 'estetica',
     number: '04',
     title: 'Estética',
-    subtitle: 'Um tempo reservado para outros cuidados.',
+    subtitle: 'Argiloterapia e tratamentos com alta frequência.',
     items: ['Argiloterapia', 'Tratamentos com alta frequência'],
     image: '/images/daniela-retrato.webp',
     imageWidth: 720,
     imageHeight: 890,
     imageAlt: 'Retrato publicado pelo espaço Daniela Moraes',
-    imageCaption: 'Daniela Moraes · o espaço',
-    whatsappTopic: 'um tratamento de estética',
+    imageCaption: 'Daniela Moraes no espaço',
+    whatsappTopic: 'argiloterapia ou tratamento com alta frequência',
+    whatsappLabel: 'Perguntar sobre estética no WhatsApp',
   },
 ] as const;
 
 export function whatsappUrl(service?: string) {
   const message = service
-    ? `Olá! Vi o site da Daniela Moraes e gostaria de agendar ${service}.`
-    : 'Olá! Vi o site da Daniela Moraes e gostaria de agendar um horário.';
+    ? `Olá, equipe do Espaço Daniela Moraes! Vim pelo site e tenho interesse em ${service}. Quais horários estão disponíveis?`
+    : 'Olá, equipe do Espaço Daniela Moraes! Vim pelo site e gostaria de saber os horários disponíveis para agendar.';
   return `https://wa.me/5512982351523?text=${encodeURIComponent(message)}`;
 }
 
