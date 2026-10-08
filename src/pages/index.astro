@@ -1,0 +1,252 @@
+---
+import '../styles/global.css';
+import { business, mapsUrl, services, whatsappUrl } from '../data/site';
+
+const pageTitle = 'Daniela Moraes Espaço de Beleza | Jardim Morumbi, São José dos Campos';
+const description = 'Cabelo, unhas, rosto e estética no Jardim Morumbi, em São José dos Campos. Conheça os serviços e agende pelo WhatsApp.';
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'BeautySalon',
+  name: business.name,
+  description,
+  telephone: business.phoneInternational,
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: business.addressLine,
+    addressLocality: business.city,
+    addressRegion: business.state,
+    postalCode: business.postalCode,
+    addressCountry: 'BR',
+  },
+  openingHoursSpecification: [
+    {
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: ['Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+      opens: '08:00',
+      closes: '19:00',
+    },
+  ],
+  sameAs: [business.instagram],
+};
+---
+
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f5f0e9" />
+    <meta name="description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content="https://static.wixstatic.com/media/9b49c3_ec3b860c341d40e28aeacefe360a645d~mv2.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght,SOFT,WONK@9..144,400,40,1;9..144,500,40,1;9..144,600,40,1&display=swap" rel="stylesheet" />
+    <title>{pageTitle}</title>
+    <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
+  </head>
+  <body>
+    <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+    <header class="site-header" id="inicio">
+      <div class="header-inner page-wrap">
+        <a class="brand" href="#inicio" aria-label="Daniela Moraes Espaço de Beleza, voltar ao início">
+          <svg class="brand-mark" viewBox="0 0 65 52" fill="none" aria-hidden="true">
+            <path d="M2 38c12 4 17-22 24-22 6 0 1 21 7 21 6 0 8-30 15-31 8-1-4 38 15 24" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+          <span class="brand-wordmark"><strong>daniela moraes</strong><small>espaço de beleza</small></span>
+        </a>
+        <nav class="main-nav" aria-label="Navegação principal">
+          <a href="#servicos">Cuidados</a>
+          <a href="#trabalhos">Nosso trabalho</a>
+          <a href="#encontre">Encontre o espaço</a>
+        </nav>
+        <a class="header-cta" href={whatsappUrl()} target="_blank" rel="noopener noreferrer">Agendar <span aria-hidden="true">↗</span></a>
+        <details class="mobile-menu">
+          <summary>Menu <span aria-hidden="true" class="menu-lines"><i></i><i></i></span></summary>
+          <nav aria-label="Navegação móvel">
+            <a href="#servicos">Cuidados</a>
+            <a href="#trabalhos">Nosso trabalho</a>
+            <a href="#encontre">Encontre o espaço</a>
+            <a href={whatsappUrl()} target="_blank" rel="noopener noreferrer">Agendar pelo WhatsApp ↗</a>
+          </nav>
+        </details>
+      </div>
+    </header>
+
+    <main id="conteudo">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-grain" aria-hidden="true"></div>
+        <div class="page-wrap hero-grid">
+          <div class="hero-content">
+            <p class="eyebrow hero-eyebrow"><span class="eyebrow-dot"></span> Jardim Morumbi · São José dos Campos</p>
+            <h1 id="hero-title">Do primeiro <em>fio</em> ao último <em>detalhe.</em></h1>
+            <p class="hero-lead">Cabelo, unhas, rosto e estética em um só espaço. Descubra os cuidados e escolha por onde começar.</p>
+            <div class="hero-actions">
+              <a class="button button-primary" href={whatsappUrl()} target="_blank" rel="noopener noreferrer"><span>Agendar pelo WhatsApp</span><span class="button-arrow" aria-hidden="true">↗</span></a>
+              <a class="text-link" href="#servicos">Explorar os cuidados <span aria-hidden="true">↓</span></a>
+            </div>
+            <div class="hero-rating" aria-label="Avaliação informada: 5,0 estrelas em 117 avaliações no Google">
+              <span class="rating-stars" aria-hidden="true">★★★★★</span>
+              <span><strong>5,0</strong> · 117 avaliações no Google</span>
+            </div>
+          </div>
+          <div class="hero-art" aria-label="Fotografia do espaço Daniela Moraes">
+            <span class="hero-art-word" aria-hidden="true">gestos<br />de beleza</span>
+            <div class="hero-photo-main" data-tilt>
+              <img src="/images/daniela-retrato.webp" alt="Retrato publicado pelo espaço Daniela Moraes, com escovas de cabelo em primeiro plano" width="720" height="890" fetchpriority="high" />
+            </div>
+            <div class="hero-photo-detail" data-tilt>
+              <img src="/images/cabelos-castanhos.webp" alt="Cabelo castanho ondulado em trabalho publicado pelo espaço" width="720" height="894" />
+              <span>um olhar para cada detalhe</span>
+            </div>
+            <div class="hero-seal" aria-hidden="true"><span>474</span><small>AV. ELIANA<br />JD. MORUMBI</small></div>
+            <svg class="hero-signature" viewBox="0 0 700 190" fill="none" aria-hidden="true" preserveAspectRatio="none"><path d="M4 135C90 155 140 80 215 90c45 6 30 75 85 64 63-13 52-125 114-130 52-4 31 105 98 107 65 1 108-42 184-48" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" /></svg>
+          </div>
+        </div>
+        <div class="hero-bottom page-wrap"><span>beleza que acompanha o seu ritmo</span><span>role para conhecer <span aria-hidden="true">↓</span></span></div>
+      </section>
+
+      <section class="intro page-wrap" aria-label="Apresentação do espaço">
+        <div class="intro-brand"><span class="intro-kicker">O ESPAÇO</span><img src="/images/marca-original.webp" alt="Monograma original de Daniela Moraes Espaço de Beleza" width="720" height="709" loading="lazy" /></div>
+        <p>Um endereço para cuidar de você de muitas formas. <em>Comece pelo que importa hoje.</em></p>
+        <svg viewBox="0 0 190 64" fill="none" aria-hidden="true"><path d="M4 42c43 14 70-33 104-18 21 9 13 33 41 27 14-3 25-13 37-22" stroke="currentColor" stroke-width="2" stroke-linecap="round" /></svg>
+      </section>
+
+      <section class="care-section" id="servicos" aria-labelledby="care-title">
+        <div class="care-head page-wrap">
+          <div>
+            <p class="eyebrow eyebrow-light">Seu cuidado, no seu tempo</p>
+            <h2 id="care-title">Escolha por onde <em>começar.</em></h2>
+          </div>
+          <p>Quatro caminhos para encontrar o cuidado que você procura. Toque em uma área para ver os serviços.</p>
+        </div>
+        <div class="care-layout page-wrap" id="care-index">
+          <div class="care-list">
+            {services.map((service, index) => (
+              <article class:list={['care-item', { 'is-active': index === 0 }]} data-care-item={service.id}>
+                <button class="care-trigger" type="button" aria-controls={`care-panel-${service.id}`} aria-expanded="true" data-care-trigger={service.id} data-number={service.number} data-image={service.image} data-image-caption={service.imageCaption}>
+                  <span class="care-number">{service.number}</span><span class="care-name">{service.title}</span><span class="care-plus" aria-hidden="true">↗</span>
+                </button>
+                <div class="care-panel" id={`care-panel-${service.id}`}>
+                  <p>{service.subtitle}</p>
+                  <ul>{service.items.map((item) => <li>{item}</li>)}</ul>
+                  <a href={whatsappUrl(service.whatsappTopic)} target="_blank" rel="noopener noreferrer">Conversar sobre {service.title.toLowerCase()} <span aria-hidden="true">↗</span></a>
+                  <img class="care-mobile-image" src={service.image} alt={service.imageAlt} width={service.imageWidth} height={service.imageHeight} loading="lazy" />
+                </div>
+              </article>
+            ))}
+          </div>
+          <div class="care-stage" aria-hidden="true">
+            <div class="care-stage-inner">
+              <span class="stage-corner stage-corner-top"></span><span class="stage-corner stage-corner-bottom"></span>
+              <img id="care-stage-image" src={services[0].image} alt="" width={services[0].imageWidth} height={services[0].imageHeight} loading="lazy" />
+              <div class="care-stage-caption"><span>caderno de cuidados / <span id="care-stage-number">{services[0].number}</span></span><span id="care-stage-name">{services[0].imageCaption}</span></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="work-section" id="trabalhos" aria-labelledby="work-title">
+        <div class="page-wrap">
+          <div class="work-head">
+            <div><p class="eyebrow">Do espaço, para você</p><h2 id="work-title">Cada trabalho, <br /><em>um detalhe novo.</em></h2></div>
+            <p>Uma seleção de imagens publicadas pelo Espaço Daniela Moraes. Cabelos, unhas e olhar em foco.</p>
+          </div>
+          <div class="work-gallery">
+            <figure class="work-photo work-photo-a"><div class="work-image"><img src="/images/cabelos-luzes.webp" alt="Cabelo longo com luzes e ondas, trabalho publicado pelo espaço" width="720" height="875" /></div><figcaption><span>01 / cabelos</span><span>luzes & movimento</span></figcaption></figure>
+            <div class="work-aside"><p class="work-aside-title">A beleza mora<br /><em>nos gestos.</em></p><svg viewBox="0 0 300 90" fill="none" aria-hidden="true"><path d="M4 72c54 12 93-60 128-52 29 7 4 59 38 59 27 0 61-50 126-44" stroke="currentColor" stroke-width="2" stroke-linecap="round" /></svg><span>um registro de cada vez</span></div>
+            <figure class="work-photo work-photo-b"><div class="work-image"><img src="/images/unhas-delicadas.webp" alt="Unhas rosa claro com pequenos detalhes escuros, foto publicada pelo espaço" width="720" height="719" /></div><figcaption><span>02 / unhas</span><span>detalhes de perto</span></figcaption></figure>
+            <figure class="work-photo work-photo-c"><div class="work-image"><img src="/images/cabelos-ruivos.webp" alt="Cabelo ruivo liso e longo, trabalho publicado pelo espaço" width="552" height="830" /></div><figcaption><span>03 / cabelos</span><span>cor & textura</span></figcaption></figure>
+            <figure class="work-photo work-photo-d"><div class="work-image"><img src="/images/olhar-cilios.webp" alt="Detalhe de cílios e sobrancelha, trabalho publicado pelo espaço" width="720" height="714" /></div><figcaption><span>04 / olhar</span><span>expressão em foco</span></figcaption></figure>
+          </div>
+          <div class="work-end"><p>Gostou do que viu? Conte qual cuidado você tem em mente.</p><a class="text-link" href={whatsappUrl()} target="_blank" rel="noopener noreferrer">Falar com o espaço <span aria-hidden="true">↗</span></a></div>
+        </div>
+      </section>
+
+      <section class="location-section" id="encontre" aria-labelledby="location-title">
+        <div class="page-wrap location-grid">
+          <div class="location-title-block">
+            <p class="eyebrow eyebrow-light">Estamos por aqui</p>
+            <h2 id="location-title">Seu momento tem <em>endereço.</em></h2>
+            <p>Na Av. Eliana, no Jardim Morumbi. Escolha o cuidado, mande uma mensagem e combine seu horário.</p>
+            <a class="button button-light" href={whatsappUrl()} target="_blank" rel="noopener noreferrer"><span>Agendar pelo WhatsApp</span><span class="button-arrow" aria-hidden="true">↗</span></a>
+          </div>
+          <div class="location-card">
+            <div class="location-rating"><span aria-hidden="true">★★★★★</span><strong>5,0</strong><small>117 avaliações no Google</small></div>
+            <div class="location-info"><span class="info-label">VISITE O ESPAÇO</span><address>{business.addressLine}<br />{business.neighborhood}, {business.city} – {business.state}<br />CEP {business.postalCode}</address><a href={mapsUrl} target="_blank" rel="noopener noreferrer">Abrir no mapa <span aria-hidden="true">↗</span></a></div>
+            <div class="location-info"><span class="info-label">HORÁRIO</span><p>Terça a sábado<br /><strong>08:00 às 19:00</strong></p><small>Fechado aos domingos e segundas</small></div>
+            <div class="location-info location-contact"><span class="info-label">CONTATO</span><a href={`tel:${business.phoneInternational}`}>{business.phoneDisplay}</a><a href={business.instagram} target="_blank" rel="noopener noreferrer">{business.instagramHandle} <span aria-hidden="true">↗</span></a></div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="page-wrap footer-grid"><div><span class="footer-brand">Daniela Moraes</span><span>Espaço de Beleza · Jardim Morumbi</span></div><a href="#inicio">Voltar ao início ↑</a><span>São José dos Campos, SP</span></div>
+    </footer>
+
+    <script>
+      const careIndex = document.getElementById('care-index');
+      const careItems = Array.from(document.querySelectorAll<HTMLElement>('[data-care-item]'));
+      const careTriggers = Array.from(document.querySelectorAll<HTMLButtonElement>('[data-care-trigger]'));
+      const stageImage = document.getElementById('care-stage-image') as HTMLImageElement | null;
+      const stageName = document.getElementById('care-stage-name');
+      const stageNumber = document.getElementById('care-stage-number');
+
+      if (careIndex && careItems.length && stageImage && stageName && stageNumber) {
+        const imageEl = stageImage;
+        const nameEl = stageName;
+        const numberEl = stageNumber;
+        let stageTimer: number | undefined;
+        careIndex.classList.add('care-enhanced');
+        function activateCare(id: string) {
+          careItems.forEach((item) => {
+            const active = item.dataset.careItem === id;
+            item.classList.toggle('is-active', active);
+            const panel = item.querySelector<HTMLElement>('.care-panel');
+            const trigger = item.querySelector<HTMLButtonElement>('.care-trigger');
+            if (panel) panel.hidden = !active;
+            if (trigger) trigger.setAttribute('aria-expanded', String(active));
+          });
+          const trigger = careTriggers.find((item) => item.dataset.careTrigger === id);
+          if (trigger) {
+            window.clearTimeout(stageTimer);
+            imageEl.classList.add('is-changing');
+            stageTimer = window.setTimeout(() => {
+              imageEl.src = trigger.dataset.image || imageEl.src;
+              nameEl.textContent = trigger.dataset.imageCaption || '';
+              numberEl.textContent = trigger.dataset.number || '';
+              imageEl.classList.remove('is-changing');
+            }, 150);
+          }
+        }
+        careTriggers.forEach((trigger) => trigger.addEventListener('click', () => activateCare(trigger.dataset.careTrigger || 'cabelo')));
+        activateCare('cabelo');
+      }
+
+      document.querySelectorAll<HTMLDetailsElement>('.mobile-menu').forEach((menu) => {
+        menu.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => { menu.open = false; }));
+      });
+
+      const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (!reducedMotion && window.matchMedia('(pointer: fine)').matches) {
+        const art = document.querySelector<HTMLElement>('.hero-art');
+        art?.addEventListener('pointermove', (event) => {
+          const rect = art.getBoundingClientRect();
+          art.style.setProperty('--pointer-x', `${((event.clientX - rect.left) / rect.width - 0.5) * 12}px`);
+          art.style.setProperty('--pointer-y', `${((event.clientY - rect.top) / rect.height - 0.5) * 12}px`);
+        });
+        art?.addEventListener('pointerleave', () => {
+          art.style.setProperty('--pointer-x', '0px');
+          art.style.setProperty('--pointer-y', '0px');
+        });
+      }
+    </script>
+  </body>
+</html>
