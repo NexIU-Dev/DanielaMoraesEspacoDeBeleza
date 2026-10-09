@@ -49,8 +49,8 @@ const structuredData = {
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:image" content={socialImage} />
     <link rel="canonical" href={Astro.url.href} />
-    <link rel="icon" type="image/svg+xml" href={asset('favicon.svg')} />
-    <link rel="icon" type="image/webp" href={asset('images/marca-original.webp')} />
+    <link rel="icon" type="image/png" href={asset('images/marca-restaurada.png')} />
+    <link rel="apple-touch-icon" href={asset('images/marca-restaurada.png')} />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet" />
@@ -63,7 +63,7 @@ const structuredData = {
     <header class="site-header" id="inicio">
       <div class="header-inner page-wrap">
         <a class="brand" href="#inicio" aria-label="Daniela Moraes Espaço de Beleza, voltar ao início">
-          <span class="brand-crop"><img class="brand-original" src={asset('images/marca-original.webp')} alt="" width="720" height="709" /></span>
+          <span class="brand-crop"><img class="brand-original" src={asset('images/marca-restaurada.png')} alt="" width="1268" height="1241" /></span>
           <span class="brand-wordmark"><strong>daniela moraes</strong><small>espaço de beleza</small></span>
         </a>
         <nav class="main-nav" aria-label="Navegação principal">
@@ -117,7 +117,7 @@ const structuredData = {
       </section>
 
       <section class="intro page-wrap" aria-label="Apresentação do espaço">
-        <div class="intro-brand"><span class="intro-kicker">A ASSINATURA DO ESPAÇO</span><img src={asset('images/marca-original.webp')} alt="Marca original Daniela Moraes Espaço de Beleza" width="720" height="709" loading="lazy" /></div>
+        <div class="intro-brand"><span class="intro-kicker">A ASSINATURA DO ESPAÇO</span><img src={asset('images/marca-restaurada.png')} alt="Marca Daniela Moraes Espaço de Beleza" width="1268" height="1241" loading="lazy" /></div>
         <p>Da escova às luzes. Da manicure aos cílios. <em>Tudo no mesmo endereço.</em></p>
       </section>
 

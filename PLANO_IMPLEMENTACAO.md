@@ -24,7 +24,7 @@ Arquivos originais e origem constam em `pesquisa/FONTES_E_DIRECAO.md`.
 | `hair2.jpg`, `hair4.jpg`, `hair6.jpg` | Ensaio visual de trabalhos de cabelo | Preservar comprimento e textura; `hair6` tem 552 px de largura |
 | `nails3.jpg` ou `nails4.jpg` | Serviço de unhas | Recorte moderado, sem alegar técnica específica da foto |
 | `lashes2.jpg` | Serviço rosto/olhar | Detalhe de olho; não ampliar além do necessário |
-| `logo.jpg` → `marca-original.webp` | Marca original no cabeçalho, na seção de assinatura e no favicon | Fonte desfocada e com faixa cinza na borda esquerda. Recorte CSS oculta a faixa. Prévia restaurada aguarda aprovação antes da substituição |
+| `logo.jpg` → `marca-original.webp` / `marca-restaurada.png` | Versão restaurada aprovada no cabeçalho, na seção de assinatura e no favicon | Original mantido no projeto para referência. Restauração aprovada pelo usuário em 2026-10-09; a IA pode ter reinterpretado sutilmente curvas finas |
 
 Fotos com marca d'água de terceiros (`nails.jpg`, `nails5.jpg`) não serão usadas. A galeria mostrará trabalhos presentes no site oficial; fotos de cabelo podem ficar em tamanho contido por sua resolução.
 
@@ -47,7 +47,7 @@ Seções: (1) capa editorial e CTA; (2) índice de cuidados interativo, com quat
 
 ## 5. Stack e arquitetura
 
-Astro 7.3.8 + TypeScript + CSS próprio. Saída estática. Página principal em `src/pages/index.astro`, CTA em `src/components/BookingButton.astro`, conteúdo factual em `src/data/site.ts`, estilos em `src/styles/global.css`, imagens em `public/images/`. O favicon aponta para a marca original em WebP, com SVG de fallback. Uma versão restaurada da marca só será incorporada após aprovação do usuário; as prévias são arquivos separados e o retrato principal permanece intacto. JavaScript pequeno e isolado para o índice interativo e o menu, com fallback sem JS. O `site` e a `base` do Astro apontam para `https://nexiu-dev.github.io/DanielaMoraesEspacoDeBeleza/`; os caminhos dos assets, canonical e Open Graph acompanham essa URL.
+Astro 7.3.8 + TypeScript + CSS próprio. Saída estática. Página principal em `src/pages/index.astro`, CTA em `src/components/BookingButton.astro`, conteúdo factual em `src/data/site.ts`, estilos em `src/styles/global.css`, imagens em `public/images/`. O favicon e o ícone da tela inicial apontam para a versão restaurada aprovada da marca, `marca-restaurada.png`. O original segue preservado em `marca-original.webp`; o retrato principal permanece intacto. JavaScript pequeno e isolado para o índice interativo e o menu, com fallback sem JS. O `site` e a `base` do Astro apontam para `https://nexiu-dev.github.io/DanielaMoraesEspacoDeBeleza/`; os caminhos dos assets, canonical e Open Graph acompanham essa URL.
 
 ## 6. Execução e aceite
 

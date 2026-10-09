@@ -38,7 +38,7 @@ svg { display: block; }
 .header-inner { height: 90px; display: flex; align-items: center; justify-content: space-between; gap: 30px; }
 .brand { display: inline-flex; align-items: center; gap: 9px; flex: 0 0 auto; text-decoration: none; color: var(--wine); }
 .brand-crop { position: relative; display: block; flex: 0 0 auto; width: 76px; height: 53px; overflow: hidden; }
-.brand-original { position: absolute; top: -39px; left: -27px; width: 130px; height: auto; max-width: none; mix-blend-mode: multiply; filter: contrast(2.1) saturate(1.2); }
+.brand-original { position: absolute; top: -39px; left: -27px; width: 130px; height: auto; max-width: none; mix-blend-mode: multiply; }
 .brand-wordmark { display: flex; flex-direction: column; line-height: 1; }
 .brand-wordmark strong { font-family: var(--serif); font-weight: 500; font-size: 25px; letter-spacing: -.035em; white-space: nowrap; }
 .brand-wordmark small { margin-top: 6px; font-size: 9px; letter-spacing: .25em; text-transform: uppercase; color: var(--ink); }
@@ -103,7 +103,7 @@ h1, h2, p { margin-top: 0; }
 
 .intro { min-height: 360px; padding-block: 52px; display: grid; grid-template-columns: minmax(250px, .7fr) minmax(0, 1.3fr); align-items: center; gap: clamp(30px, 5vw, 80px); border-bottom: 1px solid var(--line); }
 .intro-brand { align-self: stretch; display: flex; flex-direction: column; justify-content: center; align-items: flex-start; }
-.intro-brand img { width: min(100%, 340px); height: auto; margin-block: -18px; object-fit: contain; mix-blend-mode: multiply; filter: contrast(1.65) saturate(1.1); clip-path: inset(0 2% 0 2%); }
+.intro-brand img { width: min(100%, 340px); height: auto; margin-block: -18px; object-fit: contain; mix-blend-mode: multiply; }
 .intro-kicker { margin: 0; color: var(--wine); font-size: 10px; letter-spacing: .23em; font-weight: 700; }
 .intro > p:nth-child(2) { margin: 0; max-width: 850px; font-family: var(--serif); font-size: clamp(31px, 3.2vw, 52px); font-weight: 400; letter-spacing: -.035em; line-height: 1.25; }
 
