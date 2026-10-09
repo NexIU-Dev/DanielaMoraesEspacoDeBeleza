@@ -24,13 +24,13 @@ Arquivos originais e origem constam em `pesquisa/FONTES_E_DIRECAO.md`.
 | `hair2.jpg`, `hair4.jpg`, `hair6.jpg` | Ensaio visual de trabalhos de cabelo | Preservar comprimento e textura; `hair6` tem 552 px de largura |
 | `nails3.jpg` ou `nails4.jpg` | Serviço de unhas | Recorte moderado, sem alegar técnica específica da foto |
 | `lashes2.jpg` | Serviço rosto/olhar | Detalhe de olho; não ampliar além do necessário |
-| `logo.jpg` | Monograma em fundo branco na seção assinatura | Imagem sem transparência; não usar como ícone pequeno |
+| `logo.jpg` → `marca-original.webp` | Marca original no cabeçalho, na seção de assinatura e no favicon | Fonte desfocada e com faixa cinza na borda esquerda. Recorte CSS oculta a faixa. Prévia restaurada aguarda aprovação antes da substituição |
 
 Fotos com marca d'água de terceiros (`nails.jpg`, `nails5.jpg`) não serão usadas. A galeria mostrará trabalhos presentes no site oficial; fotos de cabelo podem ficar em tamanho contido por sua resolução.
 
 ## 3. Narrativa e telas
 
-**Headline:** “Cabelo, unhas e olhar. Na Eliana, 474.” **Complemento:** serviços concretos do espaço e convite para pedir um horário. **CTA principal:** “Pedir horário no WhatsApp”, com mensagem inicial que solicita horários disponíveis. Cada área tem um link de WhatsApp com o serviço correspondente já indicado na mensagem. Um botão fixo reaparece após a abertura para manter o contato acessível durante a rolagem.
+**Headline:** “Cabelo, unhas e olhar. Na Eliana, 474.” **Complemento:** serviços concretos do espaço e convite para pedir um horário. **CTA principal:** componente de marca com identificação do WhatsApp e rótulo “Pedir horário”, com mensagem inicial que solicita horários disponíveis. O link genérico “Ver todos os serviços” foi retirado da abertura. Cada área tem um link de WhatsApp com o serviço correspondente já indicado na mensagem. Um botão fixo reaparece após a abertura para manter o contato acessível durante a rolagem. A legenda do trabalho de unhas diz apenas “manicure”.
 
 Seções: (1) capa editorial e CTA; (2) índice de cuidados interativo, com quatro áreas e lista completa de serviços; (3) seleção de trabalhos publicados no site oficial; (4) endereço, funcionamento, avaliação informada e contato; (5) rodapé com Instagram e links úteis.
 
@@ -41,13 +41,13 @@ Seções: (1) capa editorial e CTA; (2) índice de cuidados interativo, com quat
 - Conceito: **Caderno de gestos**. O traço longo do monograma existente inspira uma linha desenhada em SVG, usada em poucos pontos para conduzir o olhar. Não redesenhar o monograma como se fosse logo novo.
 - Paleta: marfim quente, rosa queimado da identidade, vinho para texto/ações, verde escuro discreto vindo da parede presente nas fotos. Alto contraste nas informações essenciais.
 - Tipografia: Newsreader nos títulos e Manrope nas informações e controles. Revisar a legibilidade do itálico e a posição do CTA na primeira tela em tamanhos reais.
-- Componentes: CTA principal preenchido em vinho, com corte assimétrico e área separada para o ícone; links de serviços com linha de assinatura; links secundários simples. Ícones de interface em SVG inline, sem caracteres Unicode. Estados hover, foco, ativo e toque explícitos.
+- Componentes: CTA de agendamento com duas linhas de texto, recorte assimétrico, traço de assinatura e ícone WhatsApp SVG fiel; variações vinho, contorno e papel. Os serviços ficam em lista tipográfica, sem chips. Ícones de interface em SVG inline, sem caracteres Unicode. Estados hover, foco, ativo e toque explícitos.
 - Movimento: traço desenhado ao entrar na tela, abertura suave dos painéis de serviço e deslocamento sutil de elementos editoriais. Respeitar `prefers-reduced-motion` e manter todo conteúdo visível sem JavaScript.
-- Composição própria: fotos de cabelos feitas contra a parede verde formam um ensaio sequencial; o menu de serviços abre cada área na largura da seção, com foto e link de WhatsApp próprios. A foto principal de Daniela e sua composição na abertura foram preservadas a pedido do usuário. A comparação com Bruni, Design18k, Elisabete, PerVoí e NexIU motivou a retirada da fórmula de lista com foto fixa ao lado, usada em outro projeto da pasta.
+- Composição própria: fotos de cabelos feitas contra a parede verde formam um ensaio sequencial; o menu de serviços abre cada área na largura da seção, com foto e link de WhatsApp próprios. A foto principal de Daniela e sua composição na abertura foram preservadas a pedido do usuário. A seção final de endereço e horário foi elogiada e permanece com sua composição. A comparação com Bruni, Design18k, Elisabete, PerVoí e NexIU motivou a retirada da fórmula de lista com foto fixa ao lado, usada em outro projeto da pasta.
 
 ## 5. Stack e arquitetura
 
-Astro 7.3.8 + TypeScript + CSS próprio. Saída estática. Página principal em `src/pages/index.astro`, conteúdo factual em `src/data/site.ts`, estilos em `src/styles/global.css`, imagens otimizadas em `public/images/`, favicon SVG derivado de um gesto do monograma (não apenas iniciais). JavaScript pequeno e isolado para o índice interativo e o menu, com fallback sem JS. O `site` e a `base` do Astro apontam para `https://nexiu-dev.github.io/DanielaMoraesEspacoDeBeleza/`; os caminhos dos assets, canonical e Open Graph acompanham essa URL.
+Astro 7.3.8 + TypeScript + CSS próprio. Saída estática. Página principal em `src/pages/index.astro`, CTA em `src/components/BookingButton.astro`, conteúdo factual em `src/data/site.ts`, estilos em `src/styles/global.css`, imagens em `public/images/`. O favicon aponta para a marca original em WebP, com SVG de fallback. Uma versão restaurada da marca só será incorporada após aprovação do usuário; as prévias são arquivos separados e o retrato principal permanece intacto. JavaScript pequeno e isolado para o índice interativo e o menu, com fallback sem JS. O `site` e a `base` do Astro apontam para `https://nexiu-dev.github.io/DanielaMoraesEspacoDeBeleza/`; os caminhos dos assets, canonical e Open Graph acompanham essa URL.
 
 ## 6. Execução e aceite
 

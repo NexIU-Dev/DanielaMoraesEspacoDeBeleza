@@ -1,0 +1,17 @@
+---
+import Icon from './Icon.astro';
+
+interface Props {
+  href: string;
+  label: string;
+  tone?: 'wine' | 'outline' | 'paper';
+}
+
+const { href, label, tone = 'wine' } = Astro.props;
+---
+
+<a class:list={['booking-button', `booking-button--${tone}`]} href={href} target="_blank" rel="noopener noreferrer" aria-label={`${label} pelo WhatsApp`}>
+  <span class="booking-button-copy"><small>WHATSAPP DO ESPAÇO</small><strong>{label}</strong></span>
+  <span class="booking-button-icon"><Icon name="chat" /></span>
+  <svg class="booking-button-stroke" viewBox="0 0 120 20" fill="none" aria-hidden="true"><path d="M2 14c19 4 27-13 41-9 8 2 4 10 14 10 13 0 18-10 30-8 11 2 17 8 31-2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" /></svg>
+</a>
