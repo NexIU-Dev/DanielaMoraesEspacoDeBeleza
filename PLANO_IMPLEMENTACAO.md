@@ -30,20 +30,20 @@ Fotos com marca d'água de terceiros (`nails.jpg`, `nails5.jpg`) não serão usa
 
 ## 3. Narrativa e telas
 
-**Headline:** “Cabelo, unhas e olhar. Na Av. Eliana, 474.” **Complemento:** serviços concretos do espaço e convite para pedir um horário. **CTA principal:** “Pedir horário no WhatsApp”, com mensagem inicial que solicita horários disponíveis. Cada área tem um link de WhatsApp com o serviço correspondente já indicado na mensagem. Um botão fixo reaparece após a abertura para manter o contato acessível durante a rolagem.
+**Headline:** “Cabelo, unhas e olhar. Na Eliana, 474.” **Complemento:** serviços concretos do espaço e convite para pedir um horário. **CTA principal:** “Pedir horário no WhatsApp”, com mensagem inicial que solicita horários disponíveis. Cada área tem um link de WhatsApp com o serviço correspondente já indicado na mensagem. Um botão fixo reaparece após a abertura para manter o contato acessível durante a rolagem.
 
 Seções: (1) capa editorial e CTA; (2) índice de cuidados interativo, com quatro áreas e lista completa de serviços; (3) seleção de trabalhos publicados no site oficial; (4) endereço, funcionamento, avaliação informada e contato; (5) rodapé com Instagram e links úteis.
 
-**Telefone:** cabeçalho compacto, headline e CTA antes do retrato; índice de serviços com alvos amplos e conteúdo visível; ensaio de trabalhos em fluxo vertical; contato em destaque no fim e CTA alcançável sem cobrir conteúdo. **Desktop:** composição assimétrica na abertura; índice de cuidados à esquerda e imagem que muda à direita; galeria com recortes variados; endereço e horário em composição horizontal. Ordem de leitura e contrastes revistos separadamente.
+**Telefone:** cabeçalho compacto, headline e CTA antes do retrato; menu de serviços com alvos amplos e foto dentro da área aberta; ensaio de trabalhos em fluxo vertical; contato em destaque no fim e CTA alcançável sem cobrir conteúdo. **Desktop:** composição assimétrica preservada na abertura; menu de serviços de largura inteira, com cada foto junto ao serviço correspondente; galeria com recortes variados; endereço e horário em composição horizontal. Ordem de leitura e contrastes revistos separadamente.
 
 ## 4. Sistema visual e efeito distintivo
 
 - Conceito: **Caderno de gestos**. O traço longo do monograma existente inspira uma linha desenhada em SVG, usada em poucos pontos para conduzir o olhar. Não redesenhar o monograma como se fosse logo novo.
 - Paleta: marfim quente, rosa queimado da identidade, vinho para texto/ações, verde escuro discreto vindo da parede presente nas fotos. Alto contraste nas informações essenciais.
-- Tipografia: display serif com curvas expressivas e sans legível para informações/controles. Escala generosa sem sacrificar leitura mobile.
-- Componentes: CTA principal preenchido em vinho com forma própria; links de serviços com linha de assinatura; links secundários simples. Estados hover, foco, ativo e toque explícitos.
-- Movimento: traço desenhado ao entrar na tela, transição de fotos no índice de cuidados e deslocamento sutil de elementos editoriais. Respeitar `prefers-reduced-motion` e manter todo conteúdo visível sem JavaScript.
-- Composição própria: fotos de cabelos feitas contra a parede verde formam um ensaio sequencial; o índice de cuidados conecta cada categoria a uma imagem e a um link de WhatsApp específico.
+- Tipografia: Newsreader nos títulos e Manrope nas informações e controles. Revisar a legibilidade do itálico e a posição do CTA na primeira tela em tamanhos reais.
+- Componentes: CTA principal preenchido em vinho, com corte assimétrico e área separada para o ícone; links de serviços com linha de assinatura; links secundários simples. Ícones de interface em SVG inline, sem caracteres Unicode. Estados hover, foco, ativo e toque explícitos.
+- Movimento: traço desenhado ao entrar na tela, abertura suave dos painéis de serviço e deslocamento sutil de elementos editoriais. Respeitar `prefers-reduced-motion` e manter todo conteúdo visível sem JavaScript.
+- Composição própria: fotos de cabelos feitas contra a parede verde formam um ensaio sequencial; o menu de serviços abre cada área na largura da seção, com foto e link de WhatsApp próprios. A foto principal de Daniela e sua composição na abertura foram preservadas a pedido do usuário. A comparação com Bruni, Design18k, Elisabete, PerVoí e NexIU motivou a retirada da fórmula de lista com foto fixa ao lado, usada em outro projeto da pasta.
 
 ## 5. Stack e arquitetura
 

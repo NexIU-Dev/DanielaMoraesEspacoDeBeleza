@@ -51,7 +51,7 @@ const structuredData = {
     <link rel="icon" type="image/svg+xml" href={asset('favicon.svg')} />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet" />
     <title>{pageTitle}</title>
     <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
   </head>
@@ -90,7 +90,7 @@ const structuredData = {
         <div class="page-wrap hero-grid">
           <div class="hero-content">
             <p class="eyebrow hero-eyebrow"><span class="eyebrow-dot"></span> Jardim Morumbi · São José dos Campos</p>
-            <h1 id="hero-title">Cabelo, unhas e olhar. <em>Na Av. Eliana, 474.</em></h1>
+            <h1 id="hero-title">Cabelo, unhas e olhar. <em>Na Eliana, 474.</em></h1>
             <p class="hero-lead">Corte, escova, luzes, manicure, sobrancelhas, cílios e estética no Espaço Daniela Moraes. Escolha o serviço e peça um horário pelo WhatsApp.</p>
             <div class="hero-actions">
               <a class="button button-primary" href={whatsappUrl()} target="_blank" rel="noopener noreferrer"><span>Pedir horário no WhatsApp</span><span class="button-mark"><Icon name="chat" /></span></a>
@@ -102,7 +102,7 @@ const structuredData = {
             </div>
           </div>
           <div class="hero-art" aria-label="Fotografia do espaço Daniela Moraes">
-            <span class="hero-art-word" aria-hidden="true">474</span>
+            <span class="hero-art-word" aria-hidden="true">daniela<br />moraes</span>
             <div class="hero-photo-main" data-tilt>
               <img src={asset('images/daniela-retrato.webp')} alt="Retrato publicado pelo espaço Daniela Moraes, com escovas de cabelo em primeiro plano" width="720" height="890" fetchpriority="high" />
             </div>
@@ -110,9 +110,9 @@ const structuredData = {
               <img src={asset('images/cabelos-castanhos.webp')} alt="Cabelo castanho ondulado em trabalho publicado pelo espaço" width="720" height="894" />
               <span>cabelo feito por aqui</span>
             </div>
+            <div class="hero-seal" aria-hidden="true"><span>474</span><small>AV. ELIANA<br />JD. MORUMBI</small></div>
             <svg class="hero-signature" viewBox="0 0 700 190" fill="none" aria-hidden="true" preserveAspectRatio="none"><path d="M4 135C90 155 140 80 215 90c45 6 30 75 85 64 63-13 52-125 114-130 52-4 31 105 98 107 65 1 108-42 184-48" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" /></svg>
           </div>
-          <div class="hero-rail" aria-hidden="true"><span>01 / Cabelo</span><span>02 / Unhas</span><span>03 / Olhar</span><span>04 / Estética</span></div>
         </div>
         <div class="hero-bottom page-wrap"><span>Av. Eliana, 474 · Jardim Morumbi</span><span>veja os serviços <Icon name="down" /></span></div>
       </section>
@@ -127,32 +127,27 @@ const structuredData = {
         <div class="care-head page-wrap">
           <div>
             <p class="eyebrow eyebrow-light">Serviços do espaço</p>
-            <h2 id="care-title">O que você quer <em>agendar?</em></h2>
+            <h2 id="care-title">Cabelo, unhas, cílios. <em>Vamos marcar.</em></h2>
           </div>
-          <p>Escolha uma área, confira a lista de serviços e peça seu horário direto no WhatsApp.</p>
+          <p>Abra a área que procura. No WhatsApp, a mensagem já informa o serviço para facilitar seu agendamento.</p>
         </div>
         <div class="care-layout page-wrap" id="care-index">
           <div class="care-list">
             {services.map((service, index) => (
               <article class:list={['care-item', { 'is-active': index === 0 }]} data-care-item={service.id}>
-                <button class="care-trigger" type="button" aria-controls={`care-panel-${service.id}`} aria-expanded="true" data-care-trigger={service.id} data-number={service.number} data-image={service.image} data-image-caption={service.imageCaption}>
+                <button class="care-trigger" type="button" aria-controls={`care-panel-${service.id}`} aria-expanded="true" data-care-trigger={service.id}>
                   <span class="care-number">{service.number}</span><span class="care-name">{service.title}</span><Icon name="plus" class="care-plus" />
                 </button>
                 <div class="care-panel" id={`care-panel-${service.id}`}>
-                  <p>{service.subtitle}</p>
-                  <ul>{service.items.map((item) => <li>{item}</li>)}</ul>
-                  <a href={whatsappUrl(service.whatsappTopic)} target="_blank" rel="noopener noreferrer">{service.whatsappLabel} <Icon name="chat" /></a>
-                  <img class="care-mobile-image" src={service.image} alt={service.imageAlt} width={service.imageWidth} height={service.imageHeight} loading="lazy" />
+                  <div class="care-panel-copy">
+                    <p>{service.subtitle}</p>
+                    <ul>{service.items.map((item) => <li>{item}</li>)}</ul>
+                    <a href={whatsappUrl(service.whatsappTopic)} target="_blank" rel="noopener noreferrer">{service.whatsappLabel} <Icon name="chat" /></a>
+                  </div>
+                  <img class="care-image" src={service.image} alt={service.imageAlt} width={service.imageWidth} height={service.imageHeight} loading="lazy" />
                 </div>
               </article>
             ))}
-          </div>
-          <div class="care-stage" aria-hidden="true">
-            <div class="care-stage-inner">
-              <span class="stage-corner stage-corner-top"></span><span class="stage-corner stage-corner-bottom"></span>
-              <img id="care-stage-image" src={services[0].image} alt="" width={services[0].imageWidth} height={services[0].imageHeight} loading="lazy" />
-              <div class="care-stage-caption"><span>serviços Daniela Moraes / <span id="care-stage-number">{services[0].number}</span></span><span id="care-stage-name">{services[0].imageCaption}</span></div>
-            </div>
           </div>
         </div>
       </section>
@@ -202,15 +197,7 @@ const structuredData = {
       const careIndex = document.getElementById('care-index');
       const careItems = Array.from(document.querySelectorAll<HTMLElement>('[data-care-item]'));
       const careTriggers = Array.from(document.querySelectorAll<HTMLButtonElement>('[data-care-trigger]'));
-      const stageImage = document.getElementById('care-stage-image') as HTMLImageElement | null;
-      const stageName = document.getElementById('care-stage-name');
-      const stageNumber = document.getElementById('care-stage-number');
-
-      if (careIndex && careItems.length && stageImage && stageName && stageNumber) {
-        const imageEl = stageImage;
-        const nameEl = stageName;
-        const numberEl = stageNumber;
-        let stageTimer: number | undefined;
+      if (careIndex && careItems.length) {
         careIndex.classList.add('care-enhanced');
         function activateCare(id: string) {
           careItems.forEach((item) => {
@@ -221,17 +208,6 @@ const structuredData = {
             if (panel) panel.hidden = !active;
             if (trigger) trigger.setAttribute('aria-expanded', String(active));
           });
-          const trigger = careTriggers.find((item) => item.dataset.careTrigger === id);
-          if (trigger) {
-            window.clearTimeout(stageTimer);
-            imageEl.classList.add('is-changing');
-            stageTimer = window.setTimeout(() => {
-              imageEl.src = trigger.dataset.image || imageEl.src;
-              nameEl.textContent = trigger.dataset.imageCaption || '';
-              numberEl.textContent = trigger.dataset.number || '';
-              imageEl.classList.remove('is-changing');
-            }, 150);
-          }
         }
         careTriggers.forEach((trigger) => trigger.addEventListener('click', () => activateCare(trigger.dataset.careTrigger || 'cabelo')));
         activateCare('cabelo');
