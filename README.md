@@ -29,6 +29,6 @@ As fotografias otimizadas em `public/images/` vêm do [site oficial do espaço](
 
 ## Publicação
 
-O build é estático e pode ser hospedado em um serviço que publique o conteúdo de `dist/`. Um domínio definitivo ainda não foi definido. Ao publicar, configure um `canonical` e uma imagem Open Graph absoluta no domínio final; não aponte `canonical` para o antigo site Wix.
+O workflow em `.github/workflows/deploy.yml` publica a branch `main` no [GitHub Pages da NexIU](https://nexiu-dev.github.io/DanielaMoraesEspacoDeBeleza/). O projeto usa a base `/DanielaMoraesEspacoDeBeleza/`; imagens, favicon, CSS e JavaScript respeitam esse caminho. O canonical e a imagem Open Graph apontam para a URL publicada.
 
 Antes de apresentar uma proposta comercial ao salão, confirme a titularidade das fotos e a contagem atual de avaliações do Google. Não há depoimentos, preços de serviços ou métricas de conversão inventados nesta página.

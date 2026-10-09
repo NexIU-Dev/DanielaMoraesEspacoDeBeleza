@@ -1,3 +1,5 @@
+export const asset = (path: string) => `${import.meta.env.BASE_URL}${path.replace(/^\/+/, '')}`;
+
 export const business = {
   name: 'Daniela Moraes Espaço de Beleza',
   shortName: 'Daniela Moraes',
@@ -21,7 +23,7 @@ export const services = [
     title: 'Cabelo',
     subtitle: 'Para cortar, escovar, iluminar ou tratar os fios.',
     items: ['Corte', 'Escova', 'Hidratação', 'Cronograma capilar', 'Luzes', 'Progressiva', 'Selagem', 'Botox capilar'],
-    image: '/images/cabelos-luzes.webp',
+    image: asset('images/cabelos-luzes.webp'),
     imageWidth: 720,
     imageHeight: 875,
     imageAlt: 'Cabelo longo com luzes e ondas, trabalho publicado pelo espaço Daniela Moraes',
@@ -35,7 +37,7 @@ export const services = [
     title: 'Unhas',
     subtitle: 'Manicure, pedicure e alongamento no mesmo endereço.',
     items: ['Manicure', 'Pedicure', 'Alongamento de unhas'],
-    image: '/images/unhas-delicadas.webp',
+    image: asset('images/unhas-delicadas.webp'),
     imageWidth: 720,
     imageHeight: 719,
     imageAlt: 'Unhas em tom rosa claro com pequenos detalhes escuros, foto publicada pelo espaço',
@@ -49,7 +51,7 @@ export const services = [
     title: 'Rosto & olhar',
     subtitle: 'Design de sobrancelhas, buço e cílios.',
     items: ['Design de sobrancelhas', 'Buço', 'Cílios'],
-    image: '/images/olhar-cilios.webp',
+    image: asset('images/olhar-cilios.webp'),
     imageWidth: 720,
     imageHeight: 714,
     imageAlt: 'Detalhe de cílios e sobrancelha em foto publicada pelo espaço',
@@ -63,7 +65,7 @@ export const services = [
     title: 'Estética',
     subtitle: 'Argiloterapia e tratamentos com alta frequência.',
     items: ['Argiloterapia', 'Tratamentos com alta frequência'],
-    image: '/images/daniela-retrato.webp',
+    image: asset('images/daniela-retrato.webp'),
     imageWidth: 720,
     imageHeight: 890,
     imageAlt: 'Retrato publicado pelo espaço Daniela Moraes',

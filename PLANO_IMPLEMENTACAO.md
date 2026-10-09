@@ -2,7 +2,7 @@
 
 ## 1. Briefing aprovado e escopo
 
-Landing page para o salão Daniela Moraes Espaço de Beleza, no Jardim Morumbi, São José dos Campos. Público: pessoas da região que procuram cabelo, unhas, rosto/olhar e estética. Conversão principal: conversa para agendamento no WhatsApp `(12) 98235-1523`. O usuário aprovou Maison Lune como ponto de partida e pediu uma identidade visual muito própria, com efeitos e interações em Astro. Entrega: código-fonte em repositório GitHub e build estático. Publicação em domínio ou troca do site Wix não foi solicitada.
+Landing page para o salão Daniela Moraes Espaço de Beleza, no Jardim Morumbi, São José dos Campos. Público: pessoas da região que procuram cabelo, unhas, rosto/olhar e estética. Conversão principal: conversa para agendamento no WhatsApp `(12) 98235-1523`. O usuário aprovou Maison Lune como ponto de partida e pediu uma identidade visual muito própria, com efeitos e interações em Astro. Entrega: código-fonte em repositório GitHub, build estático e publicação no GitHub Pages da NexIU para uso no portfólio. A troca do site Wix não foi solicitada.
 
 Sem preços de serviços, formulário, agenda integrada, CMS, tracking, depoimentos fabricados ou funcionalidades de servidor. O ticket médio da empresa não foi informado; análise comercial separada usará cenários explícitos.
 
@@ -47,7 +47,7 @@ Seções: (1) capa editorial e CTA; (2) índice de cuidados interativo, com quat
 
 ## 5. Stack e arquitetura
 
-Astro 7.3.8 + TypeScript + CSS próprio. Saída estática. Página principal em `src/pages/index.astro`, conteúdo factual em `src/data/site.ts`, estilos em `src/styles/global.css`, imagens otimizadas em `public/images/`, favicon SVG derivado de um gesto do monograma (não apenas iniciais). JavaScript pequeno e isolado para o índice interativo e o menu, com fallback sem JS. Metadados em português; canonical apenas quando houver URL de publicação definitiva, para não apontar incorretamente ao Wix ou ao GitHub.
+Astro 7.3.8 + TypeScript + CSS próprio. Saída estática. Página principal em `src/pages/index.astro`, conteúdo factual em `src/data/site.ts`, estilos em `src/styles/global.css`, imagens otimizadas em `public/images/`, favicon SVG derivado de um gesto do monograma (não apenas iniciais). JavaScript pequeno e isolado para o índice interativo e o menu, com fallback sem JS. O `site` e a `base` do Astro apontam para `https://nexiu-dev.github.io/DanielaMoraesEspacoDeBeleza/`; os caminhos dos assets, canonical e Open Graph acompanham essa URL.
 
 ## 6. Execução e aceite
 
@@ -55,7 +55,7 @@ Astro 7.3.8 + TypeScript + CSS próprio. Saída estática. Página principal em 
 2. Construir estrutura semântica e conteúdo factual. Aceite: serviços, telefone, endereço e horário corretos; CTAs funcionais.
 3. Aplicar identidade e interações. Aceite: aparência própria da marca, interação acessível e desativação de movimento quando solicitada pelo sistema.
 4. Validar: `astro check`, build, navegação no build em 320/360/390/430 px, tablet e desktop; verificar foco, menu, âncoras, links externos, ausência de rolagem horizontal, recortes, carregamento e metadados. Corrigir achados antes da entrega.
-5. Commit e push no GitHub `NexIU-Dev/DanielaMoraesEspacoDeBeleza`, autorizado pelo pedido de repositório. Sem deploy público adicional.
+5. Commit e push no GitHub `NexIU-Dev/DanielaMoraesEspacoDeBeleza`; o workflow publica a branch `main` no GitHub Pages. Conferir a URL pública, imagens, navegação e caminhos de assets após o deploy.
 
 ## 7. Análise de mercado após a página
 
